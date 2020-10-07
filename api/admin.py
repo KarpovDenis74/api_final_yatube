@@ -3,9 +3,9 @@ from .models import Post, Group, Comment, Follow
 
 
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ("pk", "title", "slug")
+    list_display = ("pk", "title")
     search_fields = ("title",)
-    list_filter = ("slug",)
+    # list_filter = ("slug",)
     empty_value_display = "-пусто-"
 
 

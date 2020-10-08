@@ -4,10 +4,6 @@ from django_filters import rest_framework as filters
 
 
 class PostFilter(filters.FilterSet):
-    # date_from = filters.NumericRangeFilter(field_name="pub_date", lookup_expr='gte')
-    # date_to = filters.NumericRangeFilter(field_name="pub_date", lookup_expr='lte')
-    # pub_date = filters.DateFromToRangeFilter()
-
     date_from = filters.DateTimeFilter(field_name="pub_date",
                                        lookup_expr='gte')
     date_to = filters.DateTimeFilter(field_name="pub_date", lookup_expr='lte')

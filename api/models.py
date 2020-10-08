@@ -9,9 +9,6 @@ class Group(models.Model):
     title = models.CharField(
         verbose_name="Название сообщества",
         max_length=200)
-    # slug = models.SlugField(verbose_name="Slug сообщества", unique=True)
-    # slug = models.SlugField(verbose_name="Slug сообщества")
-    # description = models.TextField(verbose_name="Описание сообщества")
 
     def __str__(self):
         return self.title

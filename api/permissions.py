@@ -9,8 +9,3 @@ class OnlyCreatorPermission(BasePermission):
         if request.method in SAFE_METHODS:
             return True
         return request.user == obj.author
-
-
-class BaseCreateListViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
-                            viewsets.GenericViewSet):
-    pass

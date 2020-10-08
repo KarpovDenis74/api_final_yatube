@@ -7,13 +7,13 @@ from .views import PostViewSet, CommentViewSet, GroupViewSet, FollowViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register(r'posts/(?P<post_id>\d+)/comments',
+router.register(r'v1/posts/(?P<post_id>\d+)/comments',
     CommentViewSet, basename='api_posts')
-router.register(r'posts',
+router.register(r'v1/posts',
     PostViewSet, basename='api_comments')
-router.register(r'group',
+router.register(r'v1/group',
     GroupViewSet, basename='api_groups')
-router.register(r'follow',
+router.register(r'v1/follow',
     FollowViewSet, basename='api_follow')
 
 

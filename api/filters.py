@@ -2,7 +2,6 @@ from .models import Post, Follow, Group
 from django_filters import rest_framework as filters
 
 
-
 class PostFilter(filters.FilterSet):
     date_from = filters.DateTimeFilter(field_name="pub_date",
                                        lookup_expr='gte')

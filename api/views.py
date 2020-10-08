@@ -1,13 +1,11 @@
 from .models import Post, Group, Follow
 from .serializers import (PostSerializer, CommentSerializer,
     GroupSerializer, FollowSerializer)
-from rest_framework import viewsets
 from django.shortcuts import get_object_or_404
 from .permissions import OnlyCreatorPermission
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework import filters, mixins, viewsets
 from django_filters.rest_framework import DjangoFilterBackend
-
 
 
 class BaseCreateListViewSet(mixins.CreateModelMixin, mixins.ListModelMixin,
@@ -22,7 +20,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['author', 'group']
-
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
